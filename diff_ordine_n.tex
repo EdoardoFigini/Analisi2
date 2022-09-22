@@ -1,0 +1,29 @@
+\subsection{Equazioni differenziali lineari di ordine $n$}
+
+Sono nella forma:
+\begin{equation}
+    (\mbox{EC}_n) \mspace{20 mu} y^{(n)} + a_{n-1}(x) y^{(n-1)} + a_{n-2}(x) y^{(n-2)} + \dotsc + a_1(x) y' + a_0(x) y = f(x)
+\end{equation}
+
+\begin{theorem}[Esistenza e unicità Globale per i problemi di Caucy associati]
+    Se $a_j$, $j \in [1, n-1]$ sono continui in $[a, b] \subseteq \R$, e $f$ è continua in $[a,b]$, allora $\forall x_0 \in [a,b]$ e $\forall (y_{0,0}, y_{0,1}, \dotsc, y_{0,n-1}) \in \R^n$ $\exists!$ la soluzione di
+    \begin{equation}
+        \begin{cases}
+            (\mbox{EC}_n) \\
+            y(x_0) = y_{0,0} \\
+            y'(x_0) = y_{0,1} \\
+            y''(x_0) = y_{0,2} \\
+            \phantom{xx}\vdots \\
+            y^{(n-1)}(x_0) = y_{0,n-1} \\
+        \end{cases}
+    \end{equation}
+    e tale soluzione è definita su tutto $[a,b]$
+\end{theorem}
+
+\begin{theorem}[Struttura]
+    L'integrale generale di $(\mbox{EC}_n)$ è dato dal seguente insieme:
+    \begin{equation}
+        \Sigma = \{ y = \overline{y} + y_0, \mbox{ dove } y_0 \mbox{ risolve } (\mbox{EO}_n) \}
+    \end{equation}
+    essendo $\overline{y}$ una soluzione di $(\mbox{EC}_n)$
+\end{theorem}

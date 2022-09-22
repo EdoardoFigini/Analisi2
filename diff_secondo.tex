@@ -1,0 +1,108 @@
+\subsection{Equazioni differenziali lineari del II ordine}
+
+Sono nella forma:
+\begin{equation}
+    a(x) y''(x) + b(x) y'(x) + c(x)y(x) = f(x)
+\end{equation}
+
+con $a,b,c,f$ funzioni definite e continue in $I$ ed $a \neq 0$.
+
+Le soluzioni di un'equazione differenziale lineare del secondo ordine sono infinite e dipendono da due parametri arbitrari.
+
+\begin{theorem}[Principio di Sovrapposizione]
+    Se $y_1$ è soluzione di $ay'' + by' + c y = f_1$ e $y_2$ è soluzione di $ay'' + by' + c y = f_2$, allora 
+    \begin{equation}
+        y(x) = C_1 y_1 + C_2 + y_2
+    \end{equation}
+    è soluzione di $ay'' + by' + c y = C_1 f_1 + C_2 f_2$.
+\end{theorem}
+
+\subsubsection{Integrale generale delle equazioni lineari del II ordine}
+
+\begin{theorem}[Struttura per le equazioni Omogenee]
+    L'integrale generale di $a(x)y'' + b(x)y' + c(x) y = 0$, con $a,b,c$ funzioni definite e continue in $I$ ed $a \neq 0$, è dato da tutte le combinazioni lineari
+    \begin{equation}
+        y(t) = C_1 y_1(t) + C_2 y_2(t) \mspace{25mu} \forall C_1, C_2 \in \R
+    \end{equation}
+    dove $y_1$ e $y_2$ sono due soluzioni linearmente indipendenti dell'equazione.
+    \label{strut_O}
+\end{theorem}
+
+\begin{theorem}[Struttura per le equazioni Complete]
+    L'integrale generale di $a(x)y'' + b(x)y' + c(x) y = f(x)$, con $a,b,c,f$ funzioni definite e continue in $I$ ed $a \neq 0$, è dato da tutte e solo le funzioni
+    \begin{equation}
+        y(t) = C_1 y_1(t) + C_2 y_2(t) + y_P(x) \mspace{25mu} \forall C_1, C_2 \in \R
+    \end{equation}
+    dove $y_1$ e $y_2$ sono due soluzioni linearmente indipendenti dell'equazione e $y_P$ è una soluzione particolare dell'equazione completa.
+\end{theorem}
+
+Per la ricerca dell'integrale generale si considera il \emph{polinomio caratteristico associato}
+\begin{equation}
+    P(\lambda) = a \lambda^2 + b \lambda + c
+\end{equation}
+e l'\emph{equazione caratteristica associata}
+\begin{equation}
+    P(\lambda) = 0
+\end{equation}
+
+\underline{\textbf{Risoluzione:}}
+\begin{enumerate}
+    \item Trovare il polinomio caratteristico
+    \item Studiare il segno del discriminante dell'equazione caratteristica
+    \item Trovare $\lambda_1$ e $\lambda_2$ e quindi $y_1$ e $y_2$
+    \item Tramite il Teorema di Struttura (\ref{strut_O}) trovare l'integrale generale.
+\end{enumerate}
+
+Il carattere di $P(\lambda) $ è dato dal segno del discriminante:
+\begin{itemize}
+    \item Se $\Delta > 0$ \\
+    si hanno due soluzioni reali distinte:
+    \[  \begin{array}{l l}
+        \lambda_1 = \frac{-b - \sqrt{\Delta}}{2a} \\
+        \lambda_1 = \frac{-b + \sqrt{\Delta}}{2a} 
+    \end{array} \]
+    da cui 
+    \begin{equation}
+        \begin{array}{l l}
+            y_1(x) = e^{\lambda_1 t} \\
+            y_1(x) = e^{\lambda_2 t} 
+        \end{array} 
+    \end{equation}  
+    La soluzione sarà
+    \begin{equation}
+        \boxed{y(t) = C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t} \mspace{25mu} \forall C_1, C_2 \in \R}
+    \end{equation}
+
+    \item Se $\Delta < 0$ \\
+    si hanno due soluzioni complesse coniugate
+    \[  \begin{array}{l l}
+        \lambda_1 = \alpha + i \beta \\
+        \lambda_1 = \alpha - i \beta 
+    \end{array} \]
+    dove \[ \begin{array}{l l} \alpha=-\frac{b}{2a} & \beta=\frac{\sqrt{4ac - b^2}}{2a} \end{array} \]
+    Per avere soluzioni reali, si sfrutta la linearità, ottenendo
+    \begin{equation}
+        \begin{array}{l}
+            u_1(t) = e^{\alpha t}\cos (\beta t) \\
+            u_1(t) = e^{\alpha t}\sin (\beta t) \\
+        \end{array}
+    \end{equation}
+    La soluzione sarà
+    \begin{equation}
+        \boxed{y(x) = e^{\alpha t}(C_1 \cos(\beta t) + C_2 \sin(\beta t) ) \mspace{25mu} \forall C_1, C_2 \in \R}
+    \end{equation}
+    \item Se $\Delta = 0$ \\
+    si hanno due soluzioni reali coincidenti
+    \[ \lambda_1 = \lambda_2 = -\frac{b}{2a}\]
+    Per avere due soluzioni linearmente indipendenti si pone
+    \begin{equation}
+        \begin{array}{l l}
+            y_1(x) = e^{\lambda_1 t} \\
+            y_1(x) = t e^{\lambda_2 t} 
+        \end{array} 
+    \end{equation}
+    La soluzione sarà
+    \begin{equation}
+        \boxed{y(t) = C_1 e^{\lambda_1 t} + C_2 t e^{\lambda_2 t} \mspace{25mu} \forall C_1, C_2 \in \R}
+    \end{equation}
+\end{itemize}

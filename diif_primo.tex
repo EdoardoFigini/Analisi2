@@ -1,0 +1,202 @@
+\section{Equazioni differenziali}
+
+\begin{definition}[Equazione differenziale]
+    Si definisce equazione differenziale di ordine $n$ un’uguaglianza del tipo
+    \begin{equation}
+        \boxed{F(x, \, y, \, y', \, y'', \, \dotsc, \, y^{(n)}) =  0} 
+    \end{equation}
+    dove 
+
+    \begin{itemize}[noitemsep,topsep=0pt]
+        \item [$i$)] $y$ dipende da $x$ → $y = y(x)$ è la funzione incognita
+        \item [$ii$)]$F$ è una funzione assegnata di $n + 2$ variabili
+        \item [$iii$)] $x$ è la variabile \emph{indipendente}
+    \end{itemize}
+\end{definition}
+
+\begin{definition}[Soluzione dell’equazione differenziale]
+    Viene detta soluzione dell’equazione differenziale $F(x, \, y, \, y', \, y'', \, \dotsc, \, y^{(n)}) =  0$ in un certo intervallo $I \subseteq \mathbb{R}$ una funzione $\varPhi : I \to \mathbb{R}$ t.c.
+    \begin{equation}
+        \boxed{F(x, \, \varPhi(x), \, \varPhi'(x), \, \varPhi''(x), \, \dotsc, \, \varPhi^{(n)}(x) = 0}
+    \end{equation}
+\end{definition}
+
+
+\textbf{Verifica:} inserendo $\varPhi$ (e le sue derivate) al posto dell’incognita $y$ (e delle sue derivate), ottengo un’identità ($\forall \; x \in I$ vale)
+
+\begin{definition}[Integrale Generale e Particolare]
+    Sia data $F(x, \, y, \, y', \, y'', \, \dotsc, \, y^{(n)}) =  0 \; (E)$, viene detto \emph{INTEGRALE GENERALE} di $(E)$ l’insieme di \emph{tutte le soluzioni} di $(E)$. 
+
+Viene detta \emph{INTEGRALE PARTICOLARE di $(E)$} una \emph{particolare soluzione} di $(E)$.
+\end{definition}
+
+\begin{definition}[Problema di Caucy]
+    Si dice \emph{PROBLEMA DI CAUCHY} (o “ai valori iniziali”) associata a $F(x, \, y, \, y', \, y'', \, \dotsc, \, y^{(n)}) =  0$ il problema
+
+    \begin{equation}
+        \begin{cases}
+            F(x, \, y, \, y', \, y'', \, \dotsc, \, y^{(n)}) =  0 \\
+            y(x_0) = y_{0,0} \\
+            y'(x_0) = y_{0,1} \\
+            y''(x_0) = y_{0,2} \\
+            \phantom{xx}\vdots \\
+            y^{(n-1)}(x_0) = y_{0,n-1} \\
+        \end{cases}
+    \end{equation}    
+
+    con $y_{0,0}, \; y_{0,1}, \; y_{0,2}, \; \dotsc, y_{0,n-1}\in \mathbb{R}$ fissati.
+
+    L’istante $x_0$ in cui prescrivo i valori di $y, \; y', \; y'', \; \dotsc, y^{(n-1)}$ è sempre lo stesso, \emph{fissato}.
+
+\end{definition}
+$n$ condizioni che dicono chi è $y$, insieme a tutte le sue derivate, fino all’ordine $n-1$, in un punto/istante fissato.
+
+\begin{definition}[Forma normale]
+    Un’equazione differenziale di ordine $n$ è detta in \emph{FORMA NORMALE} se la derivata di ordine $n$ è esplicitata, ovvero se è della forma
+    \begin{equation}
+        y^{(n)} = \underbrace{g(x, \,y, \, y', \, y'', \, \dotsc, \, y^{(n-1)})}_{\textnormal{funz. di } n + 1 \textnormal{ variabili}}
+    \end{equation}
+\end{definition}
+
+\subsection{Equazioni differenziali del I ordine}
+Equazioni del tipo
+\begin{equation}
+    F(x, \, y, \, y') = 0
+    \label{primo_ord}
+\end{equation}
+
+\begin{proposition}
+    L’integrale generale di \textnormal{(\ref{primo_ord})} è dato da una famiglia di funzioni dipendente da un parametro $\overline{c} \in \mathbb{R}$
+
+    \begin{equation}
+        \begin{cases}
+            F(x, \, y,\, y') = 0\\
+            y(x_0) = y_0 \hspace{3em}  \mbox{condizione iniziale}
+        \end{cases}
+    \end{equation}
+
+    per avere esistenza e unicità della soluzione.
+\end{proposition}
+
+Equazioni considerate in \emph{forma normale}, ovvero
+\begin{equation}
+    y' = f(x, y)
+\end{equation}
+
+\subsubsection{Equazioni differenziali a variabili separabili}
+Sono nella forma:
+\begin{equation}
+    y' = a(x)\cdot b(y)
+\end{equation}
+
+con $a$, $b$ funzioni \emph{continue}
+
+\underline{\textbf{Risoluzione:}}
+\begin{enumerate}
+    \item Determinare l’integrale generale dell’equazione $y' = a(x)b(y(x))$
+        \begin{enumerate}
+            \item   \textbf{Ricerca delle soluzioni costanti:} costanti che annullano $b(y)$ \\
+                    sufficiente porre $b(y) \equiv 0$
+            \item   \textbf{Tutte le altre soluzioni:}
+                    \begin{itemize}
+                        \item   Si scrive $y'$ in notazione di Eulero:
+                                \begin{equation}
+                                    y' = \frac{dy}{dx}
+                                \end{equation}
+                        \item Si trattano $dy$ e $dx$ come se fossero numeri o funzioni (come se obbedissero alle tipiche regole algebriche) e si portano tutte le $y$ al primo membro e tutte le $x$ al secondo. \[ \frac{dy}{b(y)} = a(x) \cdot dx \]
+                        \item   Si integrano entrambi i membri:
+                                \begin{equation}
+                                    \int \frac{dy}{b(y)} = \int a(x) \, dx 
+                                \end{equation}
+                    \end{itemize}
+                    Si ottiene l'integrale generale dell'equazione integrale (che dipende da una costante $c$) nella forma
+                    \[ y(x) = f(x) \]
+        \end{enumerate}
+    \item   Determinare la soluzione del problema di Cauchy
+            \begin{equation}
+                \begin{cases}
+                    y' = a(x)b(y) \\
+                    y(x_0) = y_0
+                \end{cases}
+            \end{equation}
+
+            Per poter trovare il valore della costante $c$, si pone l'integrale generale in funzione di $x_0$ e lo si pone uguale a $y_0$.
+\end{enumerate}
+
+\subsubsection{Equazioni differenziali lineari del primo ordine}
+Sono nella forma:
+\begin{equation}
+    y'(x) + a(x)y(x) =f(x)
+    \label{lin}
+\end{equation}
+
+dove
+\begin{itemize}
+    \item $f(x)$ è il termine noto
+    \item $a(x)$ è il coefficiente
+\end{itemize}
+
+con $a, f$ funzioni continue assegnate
+\vspace*{\baselineskip}
+
+Se $f(x) \not\equiv 0$ si chiama “equazione completa” (EC)
+
+Se $f(x) \equiv 0$ si chiama “equazione omogenea associata” (EO)
+
+\begin{theorem}[Formula risolutiva per eq. lineari del primo ordine]
+    l’integrale generale di \textnormal{(\ref{lin})} è dato dalla famiglia di funzioni
+
+    \begin{equation}
+            y(x) = Ce^{-A(x)} + e^{-A(x)}\cdot B(x)
+    \end{equation}
+
+    al variare di $C \in \R$, dove
+    
+    \begin{equation}
+        A(x) = \int a(x) \; dx
+    \end{equation}
+    \begin{equation}
+        B(x) = \int e^{A(x)}f(x) \, dx
+    \end{equation}
+\end{theorem}
+
+\underline{\textbf{Risoluzione:}}
+\begin{enumerate}
+    \item Determinare l’integrale generale dell’equazione
+    \begin{enumerate}
+        \item Si calcola la primitiva $A(x)$
+        \item Si applica la formula
+        \begin{equation}
+            y(x) = \left( \int f(x)e^{-A(x)}\, dx \; + c \right)e^{-A(x)}
+        \end{equation}
+    \end{enumerate}
+
+    \item Determinare la soluzione del problema di Cauchy 
+    \begin{equation}
+        \begin{cases}
+            y' + a(x)y(x) = f(x) \\
+            y(x_0) = y_0
+        \end{cases}
+    \end{equation}
+\end{enumerate}
+
+\subsubsection{Equazioni di Bernoulli}
+Sono nella forma:
+\begin{equation}
+    \left\{
+    \begin{array}{l l}
+        y' +a(x)y = b(x)y^\alpha, & \alpha \in \R \\
+        y(x_0) = y_0, & y_0 > 0 
+    \end{array}
+    \right.
+\end{equation}
+
+\textbf{\underline{Risoluzione: }}
+\begin{enumerate}
+    \item Si divide per $y^\alpha$ \[ y^{-\alpha}y' + a(x) y^{1-\alpha} = b(x) \]
+    \item Si pone $z(x) := y^{1-\alpha}$ 
+    \[ \begin{cases}
+        z'(x) + (1-\alpha)a(x)z(x) = (1-\alpha)b(x) \\
+        x(x_0) = y_0^{1-\alpha}
+    \end{cases} \]
+\end{enumerate}

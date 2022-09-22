@@ -1,0 +1,44 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[italian]{babel}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{ntheorem}
+\usepackage{tikz}
+\usepackage{multirow}
+\usepackage{enumitem}
+
+\usetikzlibrary{arrows.meta}
+\tikzset{>=latex}
+
+\theoremstyle{break}
+\newtheorem{definition}{Def.}
+\newtheorem{theorem}{Teorema}
+\newtheorem{corollary}{Corollario}
+\newtheorem{proposition}{Proposizione}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\es}{\underline{Esempio:}}
+\newcommand{\oss}[1]{\textbf{Oss:} \emph{#1}}
+
+
+\setlength{\parindent}{0pt}
+
+\title{Analisi Matematica 2}
+\author{Edoardo Figini}
+\date{a.a. 2022-2023}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\pagebreak
+
+\input{diif_primo.tex}
+\input{diff_secondo.tex}
+% \input{diff_ordine_n.tex}
+
+\end{document}
