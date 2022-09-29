@@ -106,3 +106,55 @@ Il carattere di $P(\lambda) $ è dato dal segno del discriminante:
         \boxed{y(t) = C_1 e^{\lambda_1 t} + C_2 t e^{\lambda_2 t} \mspace{25mu} \forall C_1, C_2 \in \R}
     \end{equation}
 \end{itemize}
+
+Secondo il teorema di struttra occorre trovare una soluzione particolare dell'equazione completa. \\
+Si usa il metodo di \emph{Sostituzione}:
+ 
+Sia 
+\[ y'' +ay' + by = f(x)  \]
+con $a$, $b \in \R$ e $f \in C(I)$.
+
+Se $f$ è
+\begin{itemize}
+    \item polinomio (di grado $n$): si cerca una soluzione $y$ polinomio.
+    \begin{equation}
+        \left\{
+            \begin{array}{l l l}
+                P_n(x) & \mbox{se } \lambda = 0 \mbox{ non è soluzione di } P(\lambda) & b \neq 0\\
+                xP_n(x) & \mbox{se } \lambda = 0 \mbox{ è soluzione di } P(\lambda) \mbox{ con molt. 1} & b = 0, a \neq 0 \\
+                x^2 P_n(x) & \mbox{se } \lambda = 0 \mbox{ è soluzione di } P(\lambda) \mbox{ con molt. 2} & b = 0, a = 0 \\
+            \end{array}
+        \right.
+    \end{equation}
+    
+    \item esponenziale ($f = C e^{kx}$): si cerca una soluzione $y$ esponenziale.
+    \begin{equation}
+        \left\{
+            \begin{array}{l l}
+                Ae^{kx} & \mbox{se } k \mbox{ non è soluzione di $P(\lambda)$} \\
+                xAe^{kx} & \mbox{se } k \mbox{ è soluzione di $P(\lambda)$ con molteplicità } 1\\
+                x^2Ae^{kx} & \mbox{se } k \mbox{ è soluzione di $P(\lambda)$ con molteplicità } 2\\
+            \end{array}
+        \right.
+    \end{equation}
+    
+    \item trigonometrica ($f = A \cos(\beta x) + B \sin(\beta x)$): si cerca una soluzione $y$ trigonometrica.
+    \begin{equation}
+        \left\{
+            \begin{array}{l l}
+                c_1 \cos(\beta x) + c_2 \sin (\beta x) & \mbox{se } \lambda = i\beta \mbox{ non è soluzione di } P(\lambda) \\
+                x\cdot c_1 e^{\alpha x} \cos(\beta x) + x\cdot c_2 e^{\alpha x} \sin (\beta x) & \mbox{se } \lambda = i\beta \mbox{ è soluzione di } P(\lambda)\\
+            \end{array}
+        \right.
+    \end{equation}
+    
+    % \item complesso ($f = A e^{\alpha x} \cos(\beta x) + B e^{\alpha x} \sin (\beta x)$):
+    % \begin{equation}
+    %     \left\{
+    %         \begin{array}{l l}
+    %             c_1 e^{\alpha x} \cos(\beta x) + c_2 e^{\alpha x} \sin (\beta x) & \mbox{se } \alpha \pm i\beta \mbox{ non è radice dell'equazione} \\
+    %             x\cdot c_1 e^{\alpha x} \cos(\beta x) + x\cdot c_2 e^{\alpha x} \sin (\beta x) & \mbox{se } \alpha \pm i\beta \mbox{ è radice dell'equazione}\\
+    %         \end{array}
+    %     \right.
+    % \end{equation}
+\end{itemize}
