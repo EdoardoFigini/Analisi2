@@ -1,0 +1,110 @@
+\subsection{Sistemi di equazioni differenziali lineari}
+Un'equazione differenziale di ordine $n$ t.c. 
+\[
+    y^{(n)} = f(t, y', y'', \dotsc, y^{(n-1)})
+\]
+ed il problema di Cauchy corrispondente, può essere riscritta nella forma di sistema di equazioni differenziali: 
+\begin{equation}
+    \left\{
+    \begin{array}{l}
+        y_1' (t) = y_2(t) \\
+        y_2' (t) = y_3(t) \\
+        y_3' (t) = y_4(t) \\
+        \phantom{y} \vdots \\
+        y_n'(t) = f(t, y_1, y_2, \dotsc, y_{(n-1)})
+    \end{array} \right.
+\end{equation}
+
+\oss{Mentre ogni eq. può essere convertita, non tutti i sistemi possono essere scritti in forma di equazione.}
+
+\es\\
+Posta
+\[ y'' + ay' + y = 0 \]
+si pone $z = y'$:
+\begin{equation}        
+    \begin{cases}
+        y'(t) = z(t)\\
+        z'(t) = -az(t) - cy
+    \end{cases}
+\end{equation}
+
+\[
+    \left[  
+        \begin{matrix}
+            y'(t) \\ z'(t)
+        \end{matrix} 
+    \right] = \underbrace{\left[
+        \begin{matrix}
+            0 & 1 \\ -c & -a
+        \end{matrix}
+    \right]}_{A} \left[
+        \begin{matrix}
+            y(t) \\ z(t)
+        \end{matrix}
+    \right]
+\]
+
+\underline{\textbf{Risoluzione:}}\\
+Dato un sistema:
+\[
+    \begin{cases}
+        y' = ay + bz \\
+        z' = cy + dz
+    \end{cases}
+\]
+\[
+    \left[  
+        \begin{matrix}
+            y'(t) \\ z'(t)
+        \end{matrix} 
+    \right] = \underbrace{\left[
+        \begin{matrix}
+            a & c \\ b & d
+        \end{matrix}
+    \right]}_{A} \left[
+        \begin{matrix}
+            y(t) \\ z(t)
+        \end{matrix}
+    \right]
+\]
+\begin{enumerate}
+    \item Ricerca degli autovalori $\lambda$ di $A$:
+    \begin{equation}
+        |A -\lambda I|=0
+    \end{equation}
+    \[
+        \left| \begin{matrix}
+            a-\lambda & b \\
+            c & d-\lambda 
+        \end{matrix} \right| = 0
+    \]
+
+    Si ottiene $P(\lambda)$
+
+    \item Per ogni autovalore $\lambda$ si cerca l'autovettore $\vec{\omega}$ corrispondente:
+    \begin{equation}
+        [A - \lambda I] \cdot \vec{\omega} = \underline{0}
+    \end{equation}
+    \[
+        \left[ \begin{matrix}
+            -\lambda & 1 \\
+            -c & -a-\lambda 
+        \end{matrix} \right] \left[ \begin{matrix}
+            \omega_1 \\ \omega_2 
+        \end{matrix} \right] = \left[ \begin{matrix}
+            0 \\ 0
+        \end{matrix}\right]
+    \]
+    \item Le soluzioni esponenziali di $(EO)$ sono del tipo:
+    \begin{equation}
+        \vec{u} = \vec{\omega}  e^{\lambda t}
+    \end{equation}
+    \item L'integrale generale è dato da
+    \begin{equation}
+        \left[
+            \begin{matrix}
+                y \\ z
+            \end{matrix}
+        \right] = C_1 \vec{u_1} + C_2 \vec{u_2}
+    \end{equation}
+\end{enumerate}
