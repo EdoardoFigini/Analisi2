@@ -12,14 +12,79 @@
     \end{equation}
 \end{definition}
 
-\subsection{Convergenza puntuale}
+% \subsection{Convergenza puntuale}
+\begin{definition}[Convergenza puntuale]
+    Sia $I \subseteq \R$ e siano $f_n : I \to \R$.
+    Si dice che $\sum_{n=1}^\infty f_n$ converge in un punto $\overline{x} \in \R$ se \[\sum f_n(\overline{x})\] converge.
+\end{definition}
 
-\subsection{Convergenza assoluta}
+\oss{$\sum f_n(\overline{x})$ è una serie numerica.}
 
-\subsection{Convergenza totale}
+% \subsection{Convergenza assoluta}
+\begin{definition}[Convergenza assoluta]
+    Sia $I \subseteq \R$ e siano $f_n : I \to \R$.
+    Si dice che $\sum_{n=1}^\infty f_n$ converge \emph{ASSOLUTAMENTE} su $I$ se, $\forall x \in I$ la serie numerica $\overline{x} \in \R$ se \[\sum |f_n(\overline{x})|\] converge.
+\end{definition}
+
+% \subsection{Convergenza totale}
+\begin{definition}[Convergenza totale]
+    Sia $I \subseteq \R$ e siano $f_n : I \to \R$.
+    Si dice che $\sum_{n=1}^\infty f_n$ converge \emph{TOTALMENTE} nell'intervallo $I$ se, $\forall n = 1, 2, \dotsc \exists\, k_n > 0$ t.c.
+    \begin{itemize}
+        \item [$i$)] \[ |f_n(x)| \leq k_n \mspace{50mu} \forall\, x \in I\]
+        \item [$ii$)] \[ \sum_{n=1}^\infty k_n \mspace{50mu} \mbox{converge} \] 
+    \end{itemize}
+\end{definition}
+
+Per poter verificare la convergenza totale di una serie di funzioni basta verificare che
+\[
+    \sum \underset{x \in I}{\sup} \mspace{50mu} \mbox{converge}
+\]
 
 \subsection{Serie di potenze}
+Sono nella forma
+\begin{equation}
+    \sum_{n=1}^\infty a_n \omega^n
+\end{equation}
 
-\subsubsection{Serie di Taylor e funzioni analitiche reali}
+\begin{definition}[Raggio di convergenza]
+    $R \in [0, +\infty]$ t.c. la serie $\sum_{n=1}^\infty a_n \omega^n$ converge per $|\omega| > R$ e diverge per $|\omega| < R$ è detto \emph{RAGGIO DI CONVERGENZA}.
+\end{definition}
+
 
 \subsection{Serie di Fourier}
+Sia $f$ una funzione $2 T$-periodica ($f(x) = f(x+2T) \; \forall\, x \in \R, \; T> 0$), e $|f|$ è integrabile. Allora
+\begin{equation}
+    f \sim S_{[f]}(x) = \frac{a_0}{2} + \sum_{n=1}^\infty (a_n \cos(nx) + b_n \sin(nx))
+\end{equation}
+
+\underline{\textbf{Risoluzione:}}
+\begin{equation}
+    a_0 = \frac{1}{\pi}\int_{-T}^{T} f(x) \,dx
+\end{equation}
+\begin{equation}
+    a_n = \frac{1}{\pi}\int_{-T}^{T} f(x) \cos(nx) \,dx
+\end{equation}
+\begin{equation}
+    b_n = \frac{1}{\pi}\int_{-T}^{T} f(x) \sin(nx) \,dx
+\end{equation}
+
+\begin{theorem}[Criterio di Dirichlet]
+    Se ${a_n}$ e ${b_n}$ monotone decrescenti, allora $S_{[f]}(x)$ converge puntualmente in tutti i punti di $[0, 2\pi]$, eccetto al più $x=2K\pi$.
+\end{theorem}
+
+\begin{definition}[Funzione Regolare a tratti]
+    $f:[0, 2\pi] \to \R$ è detta \emph{REGOLARE A TRATTI} se 
+    \begin{itemize}
+        \item [$i$)] $f$ è limitata su $[0, 2\pi]$.
+        \item [$ii$)] si può dividere $[0, 2\pi]$ in un numero \emph{finito} di sottointevalli su cui ciascuno dei quali $f$ è continua e derivabile, inoltre nei limiti di tali intervalli esistono finiti i limiti di $f(x)$ e $f'(x)$.
+    \end{itemize} 
+\end{definition}
+
+\begin{theorem}[Convergenza puntuale di serie di Fourier]
+    Sia $f:[0, 2\pi] \to \R$ regolare a tratti. Allora la sua serie di Fourier converge puntualmente in ogni punto $x_0 \in [0, 2\pi]$ alla \emph{MEDIA DEI LIMITI DESTRO E SINISTRO} di $f$ in $x_0$, cioè $\forall \, x_0 \in [0, 2\pi]$ si ha
+    \begin{equation}
+        \frac{a_0}{2} + \sum_{n=1}^\infty (a_n \cos(nx_0) + b_n \sin(nx_0)) = \frac{f(x_0^-) + f(x_0^+)}{2}
+    \end{equation}
+    dove $f(x_0^\pm) = lim_{x \to x_0^\pm} f(x)$.
+\end{theorem}

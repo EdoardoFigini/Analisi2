@@ -111,10 +111,22 @@ Dato un sistema:
 
 % WRONSKIANA
 \subsubsection{Determinante Wronskiano}
-
-
-% ESPONENZIALE DI MATRICE
-\subsubsection{Esponenziale di matrice}
+\begin{definition}
+    Siano $\varphi_1, \varphi_2, \dotsc, \varphi_n$ soluzioni di (SO).\\
+    Si definisce la \emph{MATRICE WRONSKIANA} associata come
+    \begin{equation}
+        W(x) = \left[\begin{array}{c c c c }
+            \varphi_1(x) & \varphi_2(x) & \dotsc & \varphi_n(x)
+        \end{array}\right]
+    \end{equation}
+    di dimensioni $n \times n$.\\
+    Il determinante di $W(x)$ è detto \emph{DETEMINANTE WRONSKIANO} associato.
+\end{definition}
+$|W(x)|$ dice se $\varphi_1, \varphi_2, \dotsc, \varphi_n$ sono linearmente indipendenti, e basta controllarlo in un punto solo (o è sempre nullo, o non è mai nullo).
+\begin{itemize}
+    \item $|W(x)| = 0$, $\varphi_1, \varphi_2, \dotsc, \varphi_n$ linearmente indipendenti
+    \item $|W(x)| \neq 0$, $\varphi_1, \varphi_2, \dotsc, \varphi_n$ linearmente dipendenti
+\end{itemize}
 
 
 % SIST NON OMOGENEI

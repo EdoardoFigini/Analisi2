@@ -1,0 +1,74 @@
+\section{Curve Parametriche}
+
+\begin{definition}[Curva parametrica]
+    Si chiama \emph{CURVA PARAMETRICA} in $\R^n$ una funzione continua 
+    \begin{equation}
+        \varphi : I \subseteq \R \to \R^n
+    \end{equation}
+    dove $\varphi$ è data da $\varphi(t) = (\varphi_1(t), \varphi_2(t), \dotsc, \varphi_n(t))$, che è equivalente a 
+    \[
+        \begin{cases}
+            x_1 = \varphi_1(t) \\
+            x_2 = \varphi_2(t) \\
+            \vdots \\
+            x_n = \varphi_n(t)
+        \end{cases}
+    \]
+\end{definition}
+
+
+$\varphi(I)$ (l'immagine) è detta \emph{SOSTEGNO DELLA CURVA} $\varphi$.
+
+\begin{definition}[Curve semplici]
+    Una curva parametrica $\varphi:[a,b] \to \R^n$ è detta \emph{SEMPLICE} se $\varphi:(a,b) \to \R^n$ è iniettiva.
+\end{definition}
+
+\begin{definition}[Curve regolari]
+    Una curva $\varphi:[a,b] \to \R^n$ è detta \emph{REGOLARE} se $\varphi \in C^1((a,b))$ e $\varphi'(x) \neq \underline{0}$ $\forall\, t \in (a, b)$.
+\end{definition}
+
+\begin{definition}[Curve regolari a tratti]
+    Una curva $\varphi:[a,b] \to \R^n$ è detta \emph{REGOLARE A TRATTI} esiste una suddivisione in un numero finitop di sottointervalli $[t_k, t_{k+1}]$ di $[a,b]$ in modo che$\left.\phantom{\frac{1}{1}}\varphi\right|_{[t_k, t_{k+1}]}$ sia regolare $\forall \, k$.
+\end{definition}
+
+\subsection{Lunghezza di una curva}
+la lunghezza di una curva si calcola con
+\begin{equation}
+    L(\varphi) = \int_a^b || \varphi' (t) || \, dt
+\end{equation}
+
+Dove $\varphi' (t)$ è detto \emph{VETTORE TANGENTE} alla curva $\varphi$ nell'istante $t$ e la sua norma $||\varphi' (t)||$ è detta \emph{VELOCITA' SCALARE} di $\varphi$.
+
+\subsection{Curve equivalenti (Riparametrizzazioni)}
+\begin{definition}[Curve equivalenti]
+    Due curve $\varphi:[a,b] \to \R^n$ e $\psi :[c,d] \to \R^n$ sono dette equivalenti ($\varphi \sim \psi$) se esiste una funzione $\eta : [a,b] \to [c,d]$, di classe $C^1$ e invertibile (t.c. $\eta'(t) \neq 0 \, \forall t \in [a,b]$), detta "\emph{CAMBIO DI PARAMETRO}" t.c.
+    \begin{equation}
+        \varphi(t) = \psi (\eta(t)) \mspace{25mu} \forall \, t \in [a,b]
+    \end{equation}
+\end{definition}
+
+\begin{definition}
+    $\varphi$ è detta \emph{RIPARAMETRIZZAZIONE} di $\psi$.
+\end{definition}
+
+\subsection{Integrali curvilinei}
+\begin{definition}[Integrale curvilineo]
+    Sia $\varphi:[a,b] \to \R^n$ parametrizzazione di una curva regolare $\gamma$ con sostegno $\Gamma$.
+    
+    Sia data $f:A \subseteq \R^n \to \R$, $\Gamma \subseteq A$.
+
+    Si dice \emph{INTEGRALE CURVILINEO} di prima specie di $f$ lungo $\Gamma$ l'espressione
+    \begin{equation}
+        \int_\gamma f \, dl = \int_a^b f(\varphi(t)) \, ||\varphi'(t)|| \, dt
+    \end{equation}
+\end{definition}
+
+\subsubsection{Baricentro}
+Baricentro (in $\R^2$) = $(x_B, y_B)$, con
+\begin{equation}
+    \begin{array}{l}
+        x_B = \frac{1}{\int_\gamma f \, dl} \int_\gamma x \, f\, dl \\
+        y_B = \frac{1}{\int_\gamma f \, dl} \int_\gamma y \, f\, dl \\
+    \end{array}
+\end{equation}
+che è la media pesata
