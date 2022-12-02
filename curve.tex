@@ -5,7 +5,7 @@
     \begin{equation}
         \varphi : I \subseteq \R \to \R^n
     \end{equation}
-    dove $\varphi$ è data da $\varphi(t) = (\varphi_1(t), \varphi_2(t), \dotsc, \varphi_n(t))$, che è equivalente a 
+    dove $\varphi$ è data da $\varphi(t) = (\varphi_1(t),\, \varphi_2(t),\, \dotsc,\, \varphi_n(t))$, che è equivalente a 
     \[
         \begin{cases}
             x_1 = \varphi_1(t) \\
@@ -64,11 +64,26 @@ Dove $\varphi' (t)$ è detto \emph{VETTORE TANGENTE} alla curva $\varphi$ nell'i
 \end{definition}
 
 \subsubsection{Baricentro}
-Baricentro (in $\R^2$) = $(x_B, y_B)$, con
+\[
+    G = (x_1, \, x_2, \, \dotsc, \, x_n)
+\]
+Si calcola con
 \begin{equation}
+    \left\{
     \begin{array}{l}
-        x_B = \frac{1}{\int_\gamma f \, dl} \int_\gamma x \, f\, dl \\
-        y_B = \frac{1}{\int_\gamma f \, dl} \int_\gamma y \, f\, dl \\
-    \end{array}
+        x_1 = \frac{1}{\int_\gamma f \, dl} \int_\gamma x_1 \, f\, dl \\
+        x_2 = \frac{1}{\int_\gamma f \, dl} \int_\gamma x_2 \, f\, dl \\
+        \vdots \\
+        x_n = \frac{1}{\int_\gamma f \, dl} \int_\gamma x_n \, f\, dl \\
+    \end{array} \right.
 \end{equation}
-che è la media pesata
+che è la media pesata.
+
+In $\R^2$ è $G = (x_G,\, y_G)$.
+\[
+    \left\{
+    \begin{array}{l}
+        x_G = \frac{1}{\int_\gamma f \, dl} \int_\gamma x \, f\, dl \\
+        y_G = \frac{1}{\int_\gamma f \, dl} \int_\gamma y \, f\, dl \\
+    \end{array} \right.
+\]
